@@ -1,16 +1,46 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Category {
+class Category {
+    private String categoryName;
+    private ArrayList<Product> products;
     protected int id;
     protected String title;
     protected String descripton;
+
+    public Category(String categoryName){
+        this.categoryName = categoryName;
+        this.products = new ArrayList<>();
+    }
+    public void addProduct(Product products){
+        products.add(products);
+        System.out.println("Товар: \"" + products.name +  "\"Добавлен в категорию: " + categoryName + "\"");
+    }
+
+    public void showAllProducts(){
+        System.out.println(categoryName);
+        if (products.isEmpty()){
+            System.out.println("Нет товаров");
+        } else {
+            for(Product p : products){
+                p.showInfo();
+            }
+        }
+        System.out.println("Всего товаров: " + products.size());
+
+
+    }
+
+
+
+
 
     private static int nextId = 1;
     private static List<Category> categories = new ArrayList<>();
 
 
     public Category() { }
+
     public int getSubCategoryCount(){
         return categories.size();
     }
@@ -27,8 +57,13 @@ public abstract class Category {
     }
 
 
-    public abstract void showInfo();
-    public abstract String getType();
+    public void showInfo() {
+
+    }
+
+    public String getType() {
+        return null;
+    }
 
     public int getId() {
         return  id;

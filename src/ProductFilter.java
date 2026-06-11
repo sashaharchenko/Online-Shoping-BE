@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
 
+@FunctionalInterface
 public interface ProductFilter {
+    boolean test(Product var1);
 }
